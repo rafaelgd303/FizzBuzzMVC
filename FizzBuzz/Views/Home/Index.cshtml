@@ -1,7 +1,34 @@
-﻿@{
+﻿@model IEnumerable<string>
+
+@{
     ViewData["Title"] = "Fizz Buzz";
 }
 
-<div class="text-center">
+<div>
     <h1>Fizz buzz</h1>
+
+    <ul>
+        @foreach (var item in ViewBag.Fizz)
+        {
+            if (@item == "FizzBuzz")
+            {
+                <li class="text-success">@item</li>
+            }
+            else if (@item == "Fizz")
+            {
+                <li class="text-primary">@item</li>
+            }
+            else if (@item == "Buzz")
+            {
+                <li class="text-warning">@item</li>
+            }
+            else
+            {
+                <li>@item</li>
+            }
+        }
+    </ul>
+
 </div>
+
+

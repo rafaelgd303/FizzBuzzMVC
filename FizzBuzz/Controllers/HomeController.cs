@@ -6,8 +6,12 @@ namespace FizzBuzz.Controllers
 {
     public class HomeController : Controller
     {
+        private FizzBuzzClass fizzBuzzVariable = new FizzBuzzClass();
+        
         public IActionResult Index()
         {
+            var fizz = fizzBuzzVariable.FindFizzBuzz();
+            ViewBag.Fizz = fizz;
             return View();
         }
 
